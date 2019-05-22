@@ -19,6 +19,10 @@ struct Country: Decodable {
 class ViewController: UIViewController {
     
     let urlString = "https://raw.githubusercontent.com/Softex-Group/task-mobile/master/test.json"
+    
+    // зависимости
+    var networkService: NetworkService = NetworkService()
+    var dataStore: DataStore = DataStore()
 
     // элементы пользовательского интерфейса
     @IBOutlet weak var myTextField: UITextField!
@@ -29,53 +33,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = saveButton.frame.width / 2
-        dataFetcher()
+//        dataFetcher()
+        networkService.dataFetcher(urlString: urlString)
     }
     
-    
-    
     // MARK: - Бизнес логика
+    
     // логика сохранения имени
     func changeName() {
         guard let name = textLabel.text, name != "" else { showAlert()
             return
         }
-        print("Ваше имя сохранено: \(name)")
-        saveNameInCache(name: name)
-    }
-    
-    // MARK: - Хранение данных
-    
-    func saveNameInCache(name: String) {
         
-    }
-    
-    func getNameFromCache() -> String {
-        return "some name"
-    }
-    
-    // MARK: - Работа с сетью
-    
-    // декодируем полученные JSON данные в модель данных
-    func dataFetcher() {
-        request { (data, error) in
-            let decoder = JSONDecoder()
-            guard let data = data else { return }
-            let response = try? decoder.decode([Country].self, from: data)
-            print(response)
-        }
-    }
-    
-    // построение запроса данных по URL
-    func request(completion: @escaping (Data?, Error?) -> Void) {
-        guard let url = URL(string: urlString) else { return }
-        let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-            DispatchQueue.main.async {
-                completion(data, error)
-            }
-        })
-        task.resume()
+        dataStore.saveNameInCache(name: name)
+//        saveNameInCache(name: name)
     }
     
     //MARK: - Пользовательский интерфейс
