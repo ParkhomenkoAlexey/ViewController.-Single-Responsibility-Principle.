@@ -14,6 +14,8 @@
 		F0DB6F7222959F3600D7E2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB6F7022959F3600D7E2F0 /* LaunchScreen.storyboard */; };
 		F0DB6F7A2295D5CF00D7E2F0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB6F792295D5CF00D7E2F0 /* NetworkService.swift */; };
 		F0DB6F7C2295DA5100D7E2F0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB6F7B2295DA5100D7E2F0 /* DataStore.swift */; };
+		F0DB6F7E2296976300D7E2F0 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB6F7D2296976300D7E2F0 /* CountryModel.swift */; };
+		F0DB6F8022969AEA00D7E2F0 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB6F7F22969AEA00D7E2F0 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F0DB6F7322959F3600D7E2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB6F792295D5CF00D7E2F0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F0DB6F7B2295DA5100D7E2F0 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		F0DB6F7D2296976300D7E2F0 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		F0DB6F7F22969AEA00D7E2F0 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,9 @@
 				F0DB6F6722959F3400D7E2F0 /* AppDelegate.swift */,
 				F0DB6F6922959F3400D7E2F0 /* ViewController.swift */,
 				F0DB6F792295D5CF00D7E2F0 /* NetworkService.swift */,
+				F0DB6F7F22969AEA00D7E2F0 /* NetworkDataFetcher.swift */,
 				F0DB6F7B2295DA5100D7E2F0 /* DataStore.swift */,
+				F0DB6F7D2296976300D7E2F0 /* CountryModel.swift */,
 				F0DB6F6B22959F3400D7E2F0 /* Main.storyboard */,
 				F0DB6F6E22959F3600D7E2F0 /* Assets.xcassets */,
 				F0DB6F7022959F3600D7E2F0 /* LaunchScreen.storyboard */,
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DB6F8022969AEA00D7E2F0 /* NetworkDataFetcher.swift in Sources */,
 				F0DB6F6A22959F3400D7E2F0 /* ViewController.swift in Sources */,
+				F0DB6F7E2296976300D7E2F0 /* CountryModel.swift in Sources */,
 				F0DB6F7C2295DA5100D7E2F0 /* DataStore.swift in Sources */,
 				F0DB6F7A2295D5CF00D7E2F0 /* NetworkService.swift in Sources */,
 				F0DB6F6822959F3400D7E2F0 /* AppDelegate.swift in Sources */,
