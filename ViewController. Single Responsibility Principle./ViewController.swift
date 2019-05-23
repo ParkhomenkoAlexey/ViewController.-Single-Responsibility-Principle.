@@ -11,11 +11,9 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    
-    let urlString = "https://raw.githubusercontent.com/Softex-Group/task-mobile/master/test.json"
-    
+        
     // зависимости
-    var networkService = NetworkDataFetcher()
+    var fetcher: DataFetcher = NetworkDataFetcher()
     var dataStore: DataStore = DataStore()
 
     // элементы пользовательского интерфейса
@@ -27,11 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = saveButton.frame.width / 2
-//        dataFetcher()
-        networkService.fetchCountry(urlString: urlString) { (countries) in
-            countries?.map({ (Country) in
-                print(Country.Name)
-            })
+        fetcher.getCountry { (countries) in
+            print(countries?.first?.Name)
         }
     }
     

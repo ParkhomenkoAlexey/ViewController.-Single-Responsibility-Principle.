@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Country: Decodable {
     
     var Id: String
