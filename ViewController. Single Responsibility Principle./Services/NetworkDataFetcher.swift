@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DataFetcher {
-    func getCountry(completion: @escaping ([Country]?) -> Void)
+    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void)
 }
 
 class NetworkDataFetcher: DataFetcher {
@@ -20,14 +20,7 @@ class NetworkDataFetcher: DataFetcher {
         self.networking = networking
     }
     
-    
-    func getCountry(completion: @escaping ([Country]?) -> Void) {
-        let urlString = "https://raw.githubusercontent.com/Softex-Group/task-mobile/master/test.json"
-        fetchGenericJSONData(urlString: urlString, response: completion)
-    }
-    
-    
-    private func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void) {
+    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void) {
         networking.request(urlString: urlString) { (data, error) in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
@@ -40,7 +33,7 @@ class NetworkDataFetcher: DataFetcher {
     }
     
     // декодируем полученные JSON данные в модель данных
-    private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
+    func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let data = from else { return nil }

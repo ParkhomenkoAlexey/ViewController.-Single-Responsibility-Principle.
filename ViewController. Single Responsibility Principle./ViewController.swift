@@ -8,25 +8,27 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController {
         
     // зависимости
-    var fetcher: DataFetcher = NetworkDataFetcher()
+    var fetcherService: FetcherService = DataFetcherService()
     var dataStore: DataStore = DataStore()
-
+    
     // элементы пользовательского интерфейса
     @IBOutlet weak var myTextField: UITextField!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = saveButton.frame.width / 2
-        fetcher.getCountry { (countries) in
+        
+        fetcherService.fetchCountry { (countries) in
             print(countries?.first?.Name)
+        }
+        
+        fetcherService.fetchLocalCountry { (countries) in
+            print(countries?.last?.Name)
         }
     }
     
@@ -59,6 +61,5 @@ class ViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         changeName()
     }
-    
 }
 

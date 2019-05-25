@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0B38D3E22980E29004BE924 /* usersAPI.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0B38D3D22980E29004BE924 /* usersAPI.txt */; };
+		F0B38D4522994043004BE924 /* LocalDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B38D4422994043004BE924 /* LocalDataFetcher.swift */; };
+		F0B38D4722995CD8004BE924 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B38D4622995CD8004BE924 /* DataFetcherService.swift */; };
 		F0DB6F6822959F3400D7E2F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB6F6722959F3400D7E2F0 /* AppDelegate.swift */; };
 		F0DB6F6A22959F3400D7E2F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB6F6922959F3400D7E2F0 /* ViewController.swift */; };
 		F0DB6F6D22959F3400D7E2F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB6F6B22959F3400D7E2F0 /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0B38D3D22980E29004BE924 /* usersAPI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = usersAPI.txt; sourceTree = "<group>"; };
+		F0B38D4422994043004BE924 /* LocalDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataFetcher.swift; sourceTree = "<group>"; };
+		F0B38D4622995CD8004BE924 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		F0DB6F6422959F3400D7E2F0 /* ViewController. Single Responsibility Principle..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ViewController. Single Responsibility Principle..app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB6F6722959F3400D7E2F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0DB6F6922959F3400D7E2F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +49,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F0B38D40229818E3004BE924 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0B38D41229818F6004BE924 /* Models */,
+				F0DB6F7B2295DA5100D7E2F0 /* DataStore.swift */,
+				F0DB6F792295D5CF00D7E2F0 /* NetworkService.swift */,
+				F0DB6F7F22969AEA00D7E2F0 /* NetworkDataFetcher.swift */,
+				F0B38D4422994043004BE924 /* LocalDataFetcher.swift */,
+				F0B38D4622995CD8004BE924 /* DataFetcherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F0B38D41229818F6004BE924 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB6F7D2296976300D7E2F0 /* CountryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F0DB6F5B22959F3400D7E2F0 = {
 			isa = PBXGroup;
 			children = (
@@ -63,11 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				F0DB6F6722959F3400D7E2F0 /* AppDelegate.swift */,
+				F0B38D40229818E3004BE924 /* Services */,
 				F0DB6F6922959F3400D7E2F0 /* ViewController.swift */,
-				F0DB6F792295D5CF00D7E2F0 /* NetworkService.swift */,
-				F0DB6F7F22969AEA00D7E2F0 /* NetworkDataFetcher.swift */,
-				F0DB6F7B2295DA5100D7E2F0 /* DataStore.swift */,
-				F0DB6F7D2296976300D7E2F0 /* CountryModel.swift */,
+				F0B38D3D22980E29004BE924 /* usersAPI.txt */,
 				F0DB6F6B22959F3400D7E2F0 /* Main.storyboard */,
 				F0DB6F6E22959F3600D7E2F0 /* Assets.xcassets */,
 				F0DB6F7022959F3600D7E2F0 /* LaunchScreen.storyboard */,
@@ -135,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0DB6F7222959F3600D7E2F0 /* LaunchScreen.storyboard in Resources */,
+				F0B38D3E22980E29004BE924 /* usersAPI.txt in Resources */,
 				F0DB6F6F22959F3600D7E2F0 /* Assets.xcassets in Resources */,
 				F0DB6F6D22959F3400D7E2F0 /* Main.storyboard in Resources */,
 			);
@@ -151,6 +177,8 @@
 				F0DB6F6A22959F3400D7E2F0 /* ViewController.swift in Sources */,
 				F0DB6F7E2296976300D7E2F0 /* CountryModel.swift in Sources */,
 				F0DB6F7C2295DA5100D7E2F0 /* DataStore.swift in Sources */,
+				F0B38D4722995CD8004BE924 /* DataFetcherService.swift in Sources */,
+				F0B38D4522994043004BE924 /* LocalDataFetcher.swift in Sources */,
 				F0DB6F7A2295D5CF00D7E2F0 /* NetworkService.swift in Sources */,
 				F0DB6F6822959F3400D7E2F0 /* AppDelegate.swift in Sources */,
 			);
